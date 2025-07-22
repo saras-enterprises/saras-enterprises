@@ -1070,9 +1070,10 @@ section,
 
 .stats .stats-item span {
   font-size: 48px;
-  display: block;
+  display: inline-block;
   color: var(--default-color);
   font-weight: 700;
+  vertical-align: middle;
 }
 
 .stats .stats-item p {
@@ -1143,6 +1144,10 @@ section,
   padding: 30px 0;
 }
 
+.menu .tab-content .row.gy-5 {
+  align-items: stretch;
+}
+
 .menu .tab-content .tab-header p {
   font-size: 14px;
   text-transform: uppercase;
@@ -1157,31 +1162,52 @@ section,
 }
 
 .menu .tab-content .menu-item {
-  text-align-last: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  text-align: center;
+  padding: 24px 12px 24px 12px;
+  box-sizing: border-box;
+  background: var(--surface-color);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+  margin-bottom: 16px;
 }
 
-.menu .tab-content .menu-item .menu-img {
-  padding: 0 60px;
-  margin-bottom: 15px;
+.menu .tab-content .menu-item .menu-img,
+.menu .tab-content .menu-item img {
+  max-width: 100%;
+  width: auto;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 16px;
+  display: block;
 }
 
 .menu .tab-content .menu-item h4 {
-  font-size: 24px;
-  font-weight: 400;
-  margin-bottom: 5px;
-  font-family: var(--default-font);
+  font-size: 2rem;         /* Bigger size (about 32px) */
+  font-weight: 700;        /* Bolder */
+  margin-bottom: 8px;
+  font-family: var(--heading-font); /* Use heading font, not default */
+  font-style: normal;      /* Ensure not italic */
+  color: var(--heading-color);
 }
-
-.menu .tab-content .menu-item .ingredients {
-  font-family: var(--nav-font);
+/* .menu .tab-content .menu-item .ingredients {
+  font-family: var(--default-font);
   color: color-mix(in srgb, var(--default-color), transparent 50%);
   margin-bottom: 5px;
-}
+} */
 
-.menu .tab-content .menu-item .price {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--accent-color);
+.menu .tab-content .menu-item .ingredients {
+  margin: 0;
+  font-size: 1rem;
+  color: #666;
+  min-height: 48px; /* Ensures all descriptions take up the same space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*--------------------------------------------------------------
