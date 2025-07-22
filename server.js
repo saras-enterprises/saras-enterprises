@@ -21,7 +21,7 @@ app.use((err, req, res, next) => {
 });
 
 app.post('/api/contact', upload.single('attachment'), async (req, res) => {
-  const { name, email, message } = req.body;
+  const { name, email, subject, message } = req.body;
   const file = req.file;
 
   console.log('Received file:', file); // Debug log for attachment
@@ -39,7 +39,7 @@ app.post('/api/contact', upload.single('attachment'), async (req, res) => {
   let mailOptions = {
     from: `"${name}" <${process.env.SMTP_USER}>`,
     to: process.env.DEST_EMAIL,
-    subject: 'New Contact Form Submission',
+    subject: `New Contact Form Submission | ${subject}`,
     text: message,
     replyTo: email,
     attachments: file
