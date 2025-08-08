@@ -234,8 +234,10 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
+  max-height: 60px;
+  width: auto;
   margin-right: 8px;
+  transition: all 0.3s ease;
 }
 
 .header .logo h1 {
@@ -272,6 +274,10 @@ h6 {
   .header .logo {
     order: 1;
   }
+  
+  .header .logo img {
+    max-height: 50px;
+  }
 
   .header .btn-getstarted {
     order: 2;
@@ -281,6 +287,18 @@ h6 {
 
   .header .navmenu {
     order: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .header .logo img {
+    max-height: 45px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header .logo img {
+    max-height: 40px;
   }
 }
 
@@ -432,6 +450,7 @@ h6 {
     margin-right: 10px;
     cursor: pointer;
     transition: color 0.3s;
+    display: block;
   }
 
   .navmenu {
@@ -446,10 +465,11 @@ h6 {
     inset: 60px 20px 20px 20px;
     padding: 10px 0;
     margin: 0;
-    border-radius: 6px;
-    background-color: var(--nav-mobile-background-color);
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-    box-shadow: none;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -457,16 +477,17 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-dropdown-color);
-    padding: 10px 20px;
+    color: #333;
+    padding: 12px 20px;
     font-family: var(--nav-font);
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: space-between;
     white-space: nowrap;
     transition: 0.3s;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
   .navmenu a i,
@@ -493,7 +514,8 @@ h6 {
   .navmenu a:hover,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-dropdown-hover-color);
+    color: var(--accent-color);
+    background-color: rgba(206, 18, 18, 0.1);
   }
 
   .navmenu .active i,
@@ -547,6 +569,14 @@ h6 {
   .mobile-nav-active .navmenu>ul {
     display: block;
   }
+  
+  /* Ensure mobile menu is properly positioned */
+  .mobile-nav-active .navmenu ul {
+    position: relative;
+    inset: 60px 20px 20px 20px;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -561,11 +591,74 @@ h6 {
   position: relative;
 }
 
+/* --- Layout Improvements for 3 Columns --- */
+.footer .row {
+  /*
+  This is the key to the layout. We use flexbox on the row
+  to make the columns arrange themselves horizontally.
+  `space-between` distributes the available space evenly
+  between the items, pushing them to the edges.
+  */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer .col-lg-3 {
+  /*
+  The flex: 1 property makes each column grow and shrink
+  equally to fill the available space.
+  */
+  flex: 1;
+  /*
+  This ensures the columns don't get too narrow,
+  so the content remains readable.
+  */
+  min-width: 250px;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 991px) {
+  /*
+  For tablet-sized screens, we change the min-width to 45%
+  so two columns can fit on a single line.
+  This provides a better layout than stacking them all at once.
+  */
+  .footer .col-lg-3 {
+    flex-basis: 45%;
+    min-width: unset;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  /*
+  On mobile devices, we want each column to take up the full width.
+  `flex-basis: 100%` achieves this.
+  */
+  .footer .col-lg-3 {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* --- Icon and Text Spacing --- */
+.footer .d-flex {
+  /*
+  This class is used on the divs containing the icon and text.
+  Making it a flex container ensures the icon and text are
+  perfectly aligned on the same baseline.
+  */
+  display: flex;
+  align-items: flex-start;
+}
+
 .footer .icon {
   color: var(--accent-color);
   margin-right: 15px;
   font-size: 24px;
-  line-height: 0;
+  /* line-height: 0; is often used for icon alignment but can be tricky.
+     Using align-items on the parent is a more robust solution. */
 }
 
 .footer h4 {
@@ -578,25 +671,7 @@ h6 {
   margin-bottom: 0px;
 }
 
-.footer .social-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  margin-right: 10px;
-  transition: 0.3s;
-}
-
-.footer .social-links a:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
-}
-
+/* --- Copyright Section --- */
 .footer .copyright {
   padding-top: 20px;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
@@ -610,7 +685,6 @@ h6 {
   margin-top: 5px;
   font-size: 13px;
 }
-
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -959,19 +1033,42 @@ section,
 .why-us .why-box {
   color: var(--contrast-color);
   background: var(--accent-color);
-  padding: 30px;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(206, 18, 18, 0.3);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.why-us .why-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), transparent 20%) 100%);
+  z-index: -1;
 }
 
 .why-us .why-box h3 {
   color: var(--contrast-color);
   font-family: var(--default-font);
   font-weight: 700;
-  font-size: 34px;
-  margin-bottom: 30px;
+  font-size: 32px;
+  margin-bottom: 25px;
+  line-height: 1.2;
 }
 
 .why-us .why-box p {
-  margin-bottom: 30px;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.95;
 }
 
 .why-us .why-box .more-btn {
@@ -999,6 +1096,17 @@ section,
   width: 100%;
   height: 100%;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.why-us .icon-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .why-us .icon-box i {
@@ -1013,23 +1121,79 @@ section,
   width: 72px;
   height: 72px;
   transition: 0.3s;
+  margin: 0 auto 25px auto;
 }
 
 .why-us .icon-box h4 {
-  font-size: 20px;
-  font-weight: 500;
-  margin: 0 0 30px 0;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
   font-family: var(--default-font);
+  color: var(--heading-color);
+  line-height: 1.3;
+}
+
+.why-us .icon-box h5 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 15px 0;
+  font-family: var(--default-font);
+  color: var(--heading-color);
+}
+
+.why-us .icon-box h6 {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0 0 0 0;
+  font-family: var(--default-font);
+  color: var(--heading-color);
 }
 
 .why-us .icon-box p {
-  font-size: 15px;
+  font-size: 14px;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
+  line-height: 1.6;
+  margin: 0;
 }
 
 .why-us .icon-box:hover i {
   color: var(--contrast-color);
   background: var(--accent-color);
+  transform: scale(1.1);
+}
+
+/* Ensure full height for why-us section */
+.why-us .row {
+  align-items: stretch;
+}
+
+.why-us .col-lg-3,
+.why-us .col-lg-9 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive improvements for why-us section */
+@media (max-width: 768px) {
+  .why-us .why-box h3 {
+    font-size: 28px;
+  }
+  
+  .why-us .why-box p {
+    font-size: 15px;
+  }
+  
+  .why-us .icon-box {
+    padding: 30px 20px;
+  }
+  
+  .why-us .icon-box h4 {
+    font-size: 16px;
+  }
+  
+  .why-us .icon-box p {
+    font-size: 13px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1535,10 +1699,28 @@ section,
 
 .gallery .swiper-wrapper {
   height: auto;
+  align-items: center;
+}
+
+.gallery .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery .swiper-slide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery .swiper-slide:hover img {
+  transform: scale(1.05);
 }
 
 .gallery .swiper-pagination {
-  margin-top: 20px;
+  margin-top: 30px;
   position: relative;
 }
 
@@ -1548,6 +1730,7 @@ section,
   width: 12px;
   height: 12px;
   opacity: 1;
+  margin: 0 4px;
 }
 
 .gallery .swiper-pagination .swiper-pagination-bullet-active {
@@ -1571,6 +1754,24 @@ section,
     z-index: 1;
     transform: scale(1.2);
     transition: none;
+    border-radius: 12px;
+  }
+  
+  .gallery .swiper-slide-active img {
+    border-radius: 8px;
+  }
+}
+
+/* Responsive improvements for gallery */
+@media (max-width: 768px) {
+  .gallery .swiper-pagination {
+    margin-top: 20px;
+  }
+  
+  .gallery .swiper-pagination .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
   }
 }
 
