@@ -1710,7 +1710,7 @@ section,
 
 .gallery .swiper-slide img {
   max-width: 100%;
-  height: auto;
+  height: 180px;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
