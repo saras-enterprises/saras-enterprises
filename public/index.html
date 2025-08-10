@@ -49,23 +49,15 @@
 
   <body class="index-page">
     <header id="header" class="header d-flex align-items-center sticky-top">
-      <div
-        class="container position-relative d-flex align-items-center justify-content-between"
-      >
-        <a
-          href="../public/index.html"
-          class="logo d-flex align-items-center me-auto me-xl-0"
-        >
-          <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return true;">
-            <img src="assets/img/Saras logo.png" alt="SARAS Enterprises Logo" style="height: 80px; width: auto; ">
-          </a>
-          </a>
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        
+        <a href="#" class="logo d-flex align-items-center" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return true;">
+          <img src="assets/img/Saras logo.png" alt="SARAS Enterprises Logo">
+        </a>
     
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li>
-              <a href="#hero" class="active">Home<br /></a>
-            </li>
+            <li><a href="#hero" class="active">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#events">Team</a></li>
             <li><a href="#menu">Products</a></li>
@@ -76,7 +68,8 @@
     
         <a class="btn-getstarted" href="#contact">Contact</a>
       </div>
-    </header>   
+    </header>
+    
 
     <main class="main">
       <!-- Hero Section -->
@@ -431,6 +424,7 @@
         <!-- End Section Title -->
 
         <div class="container">
+          <div>
           <ul
             class="nav nav-tabs d-flex justify-content-center"
             data-aos="fade-up"
@@ -438,7 +432,7 @@
           >
             <li class="nav-item">
               <a
-                class="nav-link active show"
+                class="nav-link product-btn active show"
                 data-bs-toggle="tab"
                 data-bs-target="#menu-defence"
               >
@@ -449,7 +443,7 @@
 
             <!-- <li class="nav-item">
               <a
-                class="nav-link"
+                class="nav-link product-btn"
                 data-bs-toggle="tab"
                 data-bs-target="#menu-aerospace"
               >
@@ -460,7 +454,7 @@
 
             <li class="nav-item">
               <a
-                class="nav-link"
+                class="nav-link product-btn"
                 data-bs-toggle="tab"
                 data-bs-target="#menu-glassContainer"
               >
@@ -469,7 +463,7 @@
             </li>
             <li class="nav-item">
               <a
-                class="nav-link"
+                class="nav-link product-btn"
                 data-bs-toggle="tab"
                 data-bs-target="#menu-automotive"
               >
@@ -478,7 +472,7 @@
             </li>
             <!-- End tab nav item -->
           </ul>
-
+          </div>
           <div class="tab-content" data-aos="fade-up" data-aos-delay="50">
             <div class="tab-pane fade active show" id="menu-defence">
               <div class="tab-header text-center">
@@ -494,8 +488,8 @@
                       class="menu-img img-fluid"
                       alt=""
                   /></a>
-                  <h4>TX RX Frame</h4>
-                  <p class="ingredients">Description of TX-RX Frame.</p>
+                  <!-- <h4>TX RX Frame</h4> -->
+                  <p class="ingredients">TX-RX Frame</p>
                 </div>
                 <div class="col-lg-4 menu-item">
                   <a href="assets/img/electronics_carved.jpg" class="glightbox"
@@ -504,7 +498,7 @@
                       class="menu-img img-fluid"
                       alt=""
                   /></a>
-                  <h4>Carved out of solid </h4>
+                  <!-- <h4>Carved out of solid </h4> -->
                   <p class="ingredients">Carved out of solid aluminium block with high precision</p>
                 </div>
                 <!-- Menu Item -->
@@ -516,8 +510,8 @@
                       class="menu-img img-fluid"
                       alt=""
                   /></a>
-                  <h4>Binocular Frame</h4>
-                  <p class="ingredients">Description of Binocular Frame.</p>
+                  <!-- <h4>Binocular Frame</h4> -->
+                  <p class="ingredients"> Binocular Frame</p>
                 </div>
                 <!-- Menu Item -->
 
@@ -528,8 +522,8 @@
                       class="menu-img img-fluid"
                       alt=""
                   /></a>
-                  <h4>Binocular Housing</h4>
-                  <p class="ingredients">Description of Binocular Housing.</p>
+                  <!-- <h4>Binocular Housing</h4> -->
+                  <p class="ingredients">Binocular Housing</p>
                 </div>
                 <!-- Menu Item -->
               </div>
@@ -587,46 +581,52 @@
                 <p>Products</p>
                 <h3>Container Glass</h3>
               </div>
-
+            
               <div class="row gy-5">
                 <div class="col-lg-4 menu-item">
                   <a href="assets/img/menu/lockRings.png" class="glightbox">
-                  <img src="assets/img/menu/lockRings.png" class="menu-img img-fluid w-100" alt="Blow Mould Hanger" />
-                  </a><h4>Lock Ring</h4>
-                  <p class="ingredients"> Lock rings from Alloy Steel. Hardened to 60HRC</p>
+                    <img src="assets/img/menu/lockRings.png" class="menu-img img-fluid" alt="Blow Mould Hanger" />
+                  </a>
+                  <p class="ingredients">Lock rings from Alloy Steel. Hardened to 60HRC</p>
                 </div>
+            
                 <div class="col-lg-4 menu-item">
                   <a href="assets/img/menu/blowMouldRH.png" class="glightbox">
-                  <img src="assets/img/menu/blowMouldRH.png" class="menu-img img-fluid w-100" alt="Blow Mould RH" />
-                  </a><h4>Blow Mould RH</h4>
-                  <p class="ingredients">Description about Blow Mould RH</p>
+                    <img src="assets/img/menu/blowMouldRH.png" class="menu-img img-fluid" alt="Blow Mould RH" />
+                  </a>
+                  <p class="ingredients">Blow Mould Holder</p>
                 </div>
+            
                 <div class="col-lg-4 menu-item">
-                  <a href="assets/img/menu/blowMouldAssembly.png" class="glightbox">"
-                  <img src="assets/img/menu/blowMouldAssembly.png" class="menu-img img-fluid w-100" alt="Blow Mould Assembly" />
-                  </a><h4>Blow Mould Assembly</h4>
-                  <p class="ingredients">Description about Blow Mould Assembly</p>
+                  <a href="assets/img/menu/blowMouldAssembly.png" class="glightbox">
+                    <img src="assets/img/menu/blowMouldAssembly.png" class="menu-img img-fluid" alt="Blow Mould Assembly" />
+                  </a>
+                  <p class="ingredients">Mould Assembly</p>
                 </div>
+            
                 <div class="col-lg-4 menu-item">
-                  <a href="assets/img/glass_mouldinser.jpg" class="glightbox">"
-                  <img src="assets/img/glass_mouldinser.jpg" class="menu-img img-fluid w-100" alt="Blow Mould Assembly" />
-                  </a><h4>Mould Insert</h4>
-                  <p class="ingredients"> Mould Inserts, assembly spares</p>
+                  <a href="assets/img/glass_mould.jpg" class="glightbox">
+                    <img src="assets/img/glass_mould.jpg" class="menu-img img-fluid" alt="Blow Mould Assembly" />
+                  </a>
+                  <p class="ingredients">Mould Inserts, assembly spares</p>
                 </div>
+            
                 <div class="col-lg-4 menu-item">
-                  <a href="assets/img/glass_tongs.jpg" class="glightbox">"
-                  <img src="assets/img/glass_tongs.jpg" class="menu-img img-fluid w-100" alt="Blow Mould Assembly" />
-                  </a><h4>Flanges, Tong holders ,mould holder parts</h4>
-                  <p class="ingredients">Flanges, Tong holders , mould holder assembly spares</p>
+                  <a href="assets/img/glass_tong.jpg" class="glightbox">
+                    <img src="assets/img/glass_tong.jpg" class="menu-img img-fluid" alt="Blow Mould Assembly" />
+                  </a>
+                  <p class="ingredients">Flanges, Tong holders, mould holder assembly spares</p>
                 </div>
+            
                 <div class="col-lg-4 menu-item">
-                  <a href="assets/img/glass_batch.jpg" class="glightbox">"
-                  <img src="assets/img/glass_batch.jpg" class="menu-img img-fluid w-100" alt="Blow Mould Assembly" />
-                  </a><h4> A batch of Blow</h4>
-                  <p class="ingredients">A batch of Blow mould holders</p>
+                  <a href="assets/img/glass_batch.jpg" class="glightbox">
+                    <img src="assets/img/glass_batch.jpg" class="menu-img img-fluid" alt="Blow Mould Assembly" />
+                  </a>
+                  <p class="ingredients">A batch of Blow mould holders</p>
                 </div>
               </div>
             </div>
+            
             <!-- End Lunch Menu Content -->
 
             <div class="tab-pane fade" id="menu-automotive">
@@ -636,7 +636,7 @@
               </div>
 
               <div class="row gy-5">
-                <div class="col-lg-4 menu-item">
+                <!-- <div class="col-lg-4 menu-item">
                   <a href="assets/img/menu/binoFrame.png" class="glightbox"
                     ><img
                       src="assets/img/menu/binoFrame.png"
@@ -645,45 +645,45 @@
                   /></a>
                   <h4>Bosch Part</h4>
                   <p class="ingredients">Description about Bosch Part</p>
-                </div>
+                </div> -->
                 <div class="col-lg-4 menu-item">
-                  <a href="assets/img/othersection_arcylic.jpg" class="glightbox"
+                  <a href="assets/img/othersection_arcylicc.jpg" class="glightbox"
                     ><img
-                      src="assets/img/othersection_arcylic.jpg"
+                      src="assets/img/othersection_arcylicc.jpg"
                       class="menu-img img-fluid"
                       alt=""
                   /></a>
-                  <h4>precision parts</h4>
+                  <!-- <h4>precision parts</h4> -->
                   <p class="ingredients">Acrylic, polypropylene,  delrin, glass ceramic, etc. precision parts</p>
                 </div>
                 <div class="col-lg-4 menu-item">
-                  <a href="assets/img/other_section_titanium.jpg" class="glightbox"
+                  <a href="assets/img/other_titanium.jpg" class="glightbox"
                     ><img
-                      src="assets/img/other_section_titanium.jpg"
+                      src="assets/img/other_titanium.jpg"
                       class="menu-img img-fluid"
                       alt=""
                   /></a>
-                  <h4>Titanium Parts</h4>
+                  <!-- <h4>Titanium Parts</h4> -->
                   <p class="ingredients">Titanium , aluminum , white ertalyte materials</p>
                 </div>
                 <div class="col-lg-4 menu-item">
-                  <a href="assets/img/other_alloysteel.jpg" class="glightbox"
+                  <a href="assets/img/other_alloy.jpg" class="glightbox"
                     ><img
-                      src="assets/img/other_alloysteel.jpg"
+                      src="assets/img/other_alloy.jpg"
                       class="menu-img img-fluid"
                       alt=""
                   /></a>
-                  <h4>Alloy Steels Parts</h4>
+                  <!-- <h4>Alloy Steels Parts</h4> -->
                   <p class="ingredients">Alloy steels pistons and automotive spares</p>
                 </div>
                 <div class="col-lg-4 menu-item">
-                  <a href="assets/img/other_brass.jpg" class="glightbox"
+                  <a href="assets/img/other_brasss.jpg" class="glightbox"
                     ><img
-                      src="assets/img/other_brass.jpg"
+                      src="assets/img/other_brasss.jpg"
                       class="menu-img img-fluid"
                       alt=""
                   /></a>
-                  <h4>Brass Parts</h4>
+                  <!-- <h4>Brass Parts</h4> -->
                   <p class="ingredients">Bronze, brass, copper precision components</p>
                 </div>
                 <div class="col-lg-4 menu-item">
@@ -693,17 +693,17 @@
                       class="menu-img img-fluid"
                       alt=""
                   /></a>
-                  <h4>Precise Roller</h4>
+                  <!-- <h4>Precise Roller</h4> -->
                   <p class="ingredients">Precise roller made from bakelite</p>
                 </div>
                 <div class="col-lg-4 menu-item">
-                  <a href="assets/img/other_keyboard.jpg" class="glightbox"
+                  <a href="assets/img/other_keyboards.jpg" class="glightbox"
                     ><img
-                      src="assets/img/other_keyboard.jpg"
+                      src="assets/img/other_keyboards.jpg"
                       class="menu-img img-fluid"
                       alt=""
                   /></a>
-                  <h4> Acrylic keyboards</h4>
+                  <!-- <h4> Acrylic keyboards</h4> -->
                   <p class="ingredients">Acrylic keyboards for underwater applications</p>
                 </div>
                 <!-- Menu Item -->
@@ -1220,9 +1220,9 @@
                 <a
                   class="glightbox"
                   data-gallery="images-gallery"
-                  href="assets/img/gallery_trophee.jpg"
+                  href="assets/img/gallery_tropheee.jpg"
                   ><img
-                    src="assets/img/gallery_trophee.jpg"
+                    src="assets/img/gallery_tropheee.jpg"
                     class="img-fluid"
                     
                     alt="Optima Digital Height Gauge"
